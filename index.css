@@ -19,6 +19,18 @@ body {
     color: white;
 }
 
+.search-container-mobile{
+    display: none;
+    z-index: 100;
+    left: 0;
+    right: 0;
+    top: 33px;
+    height: fit-content;
+    border-radius: 5px;
+    box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+
 .header .heading {
     text-align: center;
 }

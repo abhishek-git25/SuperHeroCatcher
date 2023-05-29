@@ -14,19 +14,24 @@
 </head>
 
 <body>
+    <div class="position-relative">
     <div class="header d-lg-flex justify-content-between">
         <div class="heading">
             SUPER HERO CATCHER
-            <span class="ms-2 d-lg-none"><i class="fa fa-search" style="color: white;"></i></span>
-            <div class="bg-white mx-auto col-sm-5 col-12  col-md-8 text-dark p-2 px-2 d-lg-none"> 
+            <span class="ms-2 d-lg-none"><i class="fa fa-search" style="color: white;" id="searh_icon"></i></span>
 
-                <input type="search" name="" id="" placeholder="Search...">
-            </div>
         </div>
         <div class="d-none d-lg-block">
             <input type="search" name="" id="" placeholder="Search...">
         </div>
     </div>
+    <div class="search-container-mobile bg-white mx-auto col-sm-5 col-12 col-md-8 text-dark p-2 px-2  text-center position-absolute "
+        id="search_container">
+        <input type="search" name="" id="" placeholder="Search..." class="w-100">
+        
+
+    </div>
+</div>
     <div class="main_container">
         <div class="card_container">
             <div class="card">
@@ -38,7 +43,7 @@
             </div>
         </div>
     </div>
-
+    <script src="./index.js"></script>
 </body>
 
 </html>
