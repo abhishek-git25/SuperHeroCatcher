@@ -19,14 +19,10 @@ function generateHash(timestamp, publicKey, privateKey) {
   return hash;
 }
 
-
 const hash = generateHash(timestamp, publicKey, privateKey);
 
-
 const superHeroList = `https://gateway.marvel.com/v1/public/characters?ts=${timestamp}&apikey=${publicKey}&hash=${hash}`;
-// const superHeroDetails = `https://gateway.marvel.com/v1/public/characters/${id}?ts=${timestamp}&apikey=${publicKey}&hash=${hash}`;
-// Generate the timestamp (ts)
-const ts = Date.now().toString();
+const ts = Date.now().toString();   // genrating time stamp 
 
 
 // function to toggle search container on mobile view
@@ -40,6 +36,8 @@ function toggleSeachContainer(e) {
 
 }
 
+
+// superherolist api call
 async function fetchSuperHeros() {
   try {
     const res = await fetch(superHeroList)
@@ -59,7 +57,8 @@ function getDataList(data) {
   }
 }
 
-async function redirectToDetails(id) {
+// redirects to details page
+function redirectToDetails(id) {
   const url = new URL(`superherodetails.html?id=${id}`, window.location.href);
   window.location.href = url;
 }
@@ -94,6 +93,8 @@ function addToFavourites(data) {
 
 }
 
+// function to render favourites in dom
+
 function renderFavouriteSuperHero(favourite) {
   let favouriteHtml = `<div class="card me-3 mt-2" onclick="redirectToDetails(${favourite.id})">
   <img src= ${favourite.thumbnail.path + "." + favourite.thumbnail.extension}  alt="superhero1" width="100" height="100" class="mx-auto">
@@ -106,13 +107,14 @@ function renderFavouriteSuperHero(favourite) {
 
 }
 
+// function to remove favourites
 function removeFavourite(id) {
   favourites = favourites.filter((item) => item.id !== id)
   localStorage.setItem('favourite_superhero', JSON.stringify(favourites))
   getFavourites()
 }
 
-
+// function to get favourites an iterate them over function which renders to DOM
 function getFavourites() {
   const getFavs = JSON.parse(localStorage.getItem('favourite_superhero'));
   favouriteListContainer.innerHTML = '';
@@ -124,8 +126,7 @@ function getFavourites() {
 }
 
 
-
-// fetchSuperoDetails(id)
+// function to render search list  for web
 
 function renderSearchList(value) {
   const li = document.createElement('li')
@@ -133,13 +134,16 @@ function renderSearchList(value) {
   searchListWeb.append(li);
 }
 
+// function to render search list  for mobile
+
 function renderSearchListMobile(value) {
   const li = document.createElement('li');
   li.innerHTML += `<span onclick="redirectToDetails(${value.id})">${value.name}</span>`
   searchListMobile.append(li);
 }
 
-// console.log(dynamicData , "162");
+
+// function to handle search box value
 
 function handleSearch(event, type) {
   let searchInput = type === 'web' ? document.getElementById('search_superhero_web') : document.getElementById('search_superhero_mobile')
@@ -165,13 +169,13 @@ function handleSearch(event, type) {
 }
 
 
-
+//  gets the end pathname
 let pathname = window.location.href.split('/')
 pathname = pathname[pathname.length - 1]
-console.log(pathname, "183");
 
 
-// fetches the favourite superhero on click
+
+// only renders when a certain pathname matches
 if (pathname === 'index.html') {
   cardMain.addEventListener('click', function (event) {
     const addButton = event.target.closest(".card .btn-dark")

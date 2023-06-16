@@ -3,6 +3,8 @@ body {
     margin: 0;
 }
 
+
+/* superhero list css */
 .main_container {
     padding: 20px;
 }
@@ -102,9 +104,10 @@ body {
     background-color: rgb(142, 142, 142);
 }
 
+/* superhero list css */
+
 
 /* superherodetails css */
-
 .card-details {
     background-color: #333;
     color: #fff;
@@ -141,3 +144,5 @@ body {
   .list-group-item:hover {
     background-color: #555;
   }
+
+  /* superherodetails css */

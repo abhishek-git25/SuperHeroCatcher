@@ -12,12 +12,6 @@ const stories = document.getElementById('story-name');
 // Use a regular expression to extract the ID from the URL
 const regex = /[\?&]id=([^&#]*)/.exec(url);
 const id = regex ? regex[1] : null;
-let simplifiedData = [];
-let obj = {
-    name: "",
-    image: "",
-    description: ""
-};
 
 // function to generate hash key
 function generateHash(timestamp, publicKey, privateKey) {
@@ -28,6 +22,8 @@ function generateHash(timestamp, publicKey, privateKey) {
 
 
 const hash = generateHash(timestamp, publicKey, privateKey);
+
+// superhero details api call
 
 async function fetchSuperHeroDetails() {
     try {
@@ -40,8 +36,9 @@ async function fetchSuperHeroDetails() {
 
 }
 
+// function to get and set data to the dom
+
 function getData(data) {
-    console.log(data, "41");
     let results = data.data.results[0];
     let image = results.thumbnail.path + "." + results.thumbnail.extension;
     superHeroImage.src = image;
@@ -57,7 +54,7 @@ function getData(data) {
     }).join('  ||  ')
 
     stories.innerText = results.stories.items.map((item) => {
-        return item.name.slice(0 ,32)
+        return item.name.slice(0, 32)
     }).join('  ||  ')
 }
 
