@@ -8,7 +8,8 @@ const imageDesc = document.getElementById('image-description');
 const comics = document.getElementById('comics-name');
 const series = document.getElementById('series-name');
 const stories = document.getElementById('story-name');
-
+const loader = document.getElementById('details-loading');
+const detailsContainer = document.getElementById('details-container');
 // Use a regular expression to extract the ID from the URL
 const regex = /[\?&]id=([^&#]*)/.exec(url);
 const id = regex ? regex[1] : null;
@@ -26,10 +27,18 @@ const hash = generateHash(timestamp, publicKey, privateKey);
 // superhero details api call
 
 async function fetchSuperHeroDetails() {
+    loader.style.display = 'block';
+    detailsContainer.style.display = 'none';
     try {
         const res = await fetch(`https://gateway.marvel.com/v1/public/characters/${id}?ts=${timestamp}&apikey=${publicKey}&hash=${hash}`)
         const data = await res.json()
-        getData(data)
+
+        if(data.code === 200 && data.status ===  'Ok'){
+            loader.style.display = 'none';
+            detailsContainer.style.display = 'block';
+            getData(data)
+        }
+        
     } catch (error) {
         console.log(error);
     }
