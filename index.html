@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/crypto-js/4.1.1/crypto-js.min.js"></script>
+    <link rel="stylesheet" href="bootstrap.min.css">
+    <link rel="stylesheet" href="index.css">
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    
+    <title>Superhero Catcher</title>
+</head>
+
+<body>
+    <!-- superhero listpage -->
+
+    <div class="position-relative" style="z-index: 10;">
+        <div class="header d-lg-flex justify-content-between px-3 align-items-center">
+            <div class="heading">
+                SUPER HERO CATCHER
+                <span class="ms-2 d-lg-none"><i class="fa fa-search" style="color: white;" id="searh_icon"></i></span>
+
+            </div>
+            <div class="d-none d-lg-block position-relative">
+                <input type="search" name="" id="search_superhero_web" placeholder="Search..." class="rounded px-2 py-1" onkeyup="handleSearch(event , 'web')">
+                <ul id="search_list_web" class="search_list">
+
+                </ul>
+            </div>
+        </div>
+        <div class="search-container-mobile bg-white mx-auto col-sm-5 col-12 col-md-8 text-dark p-2 px-2  text-center position-absolute "
+            id="search_container">
+            <div class="position-relative" style="z-index: 10;">
+            <input type="search" name="" id="search_superhero_mobile" placeholder="Search..." class="w-100" onkeyup="handleSearch(event , 'mobile')">
+            <ul id="search_list_mobile" class="search_list">
+
+            </ul>
+        </div>
+        </div>
+    </div>
+    <div class="main_container">
+        <div class="card_container d-flex flex-wrap justify-content-center justify-content-lg-start" id="card-main-container">
+        </div>
+    </div>
+    <hr>
+    <div>
+        <h1 class="text-center text-white fw-bold">Favourites</h1>
+        <div class="main_container">
+            <div class="card_container  d-flex flex-wrap" id="favourites-container">
+            
+            </div>
+        </div>
+
+    </div>
+
+    <!-- js file -->
+    <script src="./index.js"></script>   
+    <!-- bootstrapjs file -->
+    <script src="./bootstrap.min.js"></script>
+</body>
+
+</html>
+

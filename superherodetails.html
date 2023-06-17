@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Superhero Details</title>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/crypto-js/4.1.1/crypto-js.min.js"></script>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+  <link rel="stylesheet" href="index.css">
+
+  <!-- <link rel="stylesheet" href="index.css"> -->
+  <style>
+    /* Custom styles for dark theme */
+    /* body {
+      background-color: #222;
+      color: #fff;
+      font-family: Arial, sans-serif;
+    } */
+/* 
+    .card-details {
+      background-color: #333;
+      color: #fff;
+      border: none;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+    }
+
+    .card-title {
+      color: #fff;
+      font-size: 24px;
+      margin-bottom: 10px;
+    }
+
+    .list-group-item {
+      background-color: #444;
+      border-color: #333;
+      color: #fff;
+    }
+
+    .list-group-item:not(:last-child) {
+      border-bottom: none;
+    }
+
+    .list-group-item:first-child {
+      border-top-left-radius: 0;
+      border-top-right-radius: 0;
+    }
+
+    .list-group-item:last-child {
+      border-bottom-left-radius: 0;
+      border-bottom-right-radius: 0;
+    }
+
+    .list-group-item:hover {
+      background-color: #555;
+    } */
+  </style>
+</head>
+
+<body>
+  <div class="container">
+    <div class="row mt-5" >
+      <div class="col-md-4">
+        <div class="card-details">
+          <img src="" class="card-img-top" alt="Superhero Image" id="superhero-img">
+          <div class="card-body">
+            <h5 class="card-title" id="image-title">Superhero Name</h5>
+            <p class="card-text" id="image-description">Superhero Description</p>
+          </div>
+        </div>
+        <div class="mt-2">
+          <a href="index.html" style="color: white;">
+            <i class="fas fa-arrow-left back-icon" ></i><span class="mx-2">Go Back</span>
+          </a>
+        </div>
+       
+      
+      </div>
+      <div class="col-md-8">
+        <div class="card-details">
+          <div class="card-body">
+            <h5 class="card-title">Superhero Details</h5>
+            <ul class="list-group">
+              <li class="list-group-item">Comics: <span id="comics-name" class="px-2"></span></li>
+              <li class="list-group-item">Series: <span id="series-name" class="px-2"></span></li>
+              <li class="list-group-item">Stories: <span id="story-name" class="px-2"></span></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
+  <script src="./superherodetails.js"></script>
+</body>
+
+</html>

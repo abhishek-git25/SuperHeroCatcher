@@ -1,0 +1,148 @@
+body {
+    background-color: #222;
+    margin: 0;
+}
+
+
+/* superhero list css */
+.main_container {
+    padding: 20px;
+}
+
+.header {
+    /* From https://css.glass */
+    background: rgba(189, 189, 189, 0.2);
+    /* border-radius: 16px; */
+    box-shadow: 0 4px 30px rgba(119, 119, 119, 0.1);
+    backdrop-filter: blur(5px);
+    -webkit-backdrop-filter: blur(5px);
+    padding: 10px 5px;
+    height: fit-content;
+    color: white;
+}
+
+.search-container-mobile {
+    display: none;
+    z-index: 100;
+    left: 0;
+    right: 0;
+    top: 33px;
+    height: fit-content;
+    border-radius: 5px;
+    box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+
+.header .heading {
+    text-align: center;
+}
+
+.card {
+    box-shadow: 0 2px 3px 3px rgba(202, 202, 202, 0.2), 0 2px 15px 3px rgba(127, 127, 127, 0.19);
+    border: 1px solid rgba(0, 0, 0, 0.2), ;
+    padding: 10px 5px;
+    display: flex;
+    flex-direction: column;
+    background-color: rgb(13, 13, 13);
+    justify-content: center;
+    width: 280px;
+    position: relative;
+    /* margin-right: 15px!important; */
+    transition: transform .4s ease-in-out;
+    z-index: 1;
+}
+
+.card:hover {
+    box-shadow: 0 2px 3px 3px rgba(202, 202, 202, 0.2), 0 2px 15px 3px rgba(127, 127, 127, 0.19);
+    border: 1px solid rgba(0, 0, 0, 0.2), ;
+    padding: 10px 5px;
+    display: flex;
+    flex-direction: column;
+    background-color: black;
+    justify-content: center;
+    z-index: 2;
+
+    transform: scale(1.1);
+}
+
+.search_list {
+    position: absolute;
+    background: rgb(55 55 55);
+    color: white;
+    overflow: auto;
+    border-bottom-right-radius: 10px;
+    border-bottom-left-radius: 10px;
+    list-style-type: none;
+    padding: 0;
+    height: 200px;
+    scrollbar-width: thin;
+    scrollbar-color: transparent transparent;
+    scrollbar-track-color: transparent;
+    z-index: 3;
+}
+
+.search_list::-webkit-scrollbar {
+    width: 6px;
+    /* Adjust the width as needed */
+}
+
+.search_list::-webkit-scrollbar-thumb {
+    background-color: transparent;
+}
+
+.search_list::-webkit-scrollbar-track {
+    background-color: transparent;
+}
+
+.search_list li {
+    font-size: 13px;
+    padding: 10px 16px;
+    cursor: pointer;
+}
+
+.search_list li:hover {
+    background-color: rgb(142, 142, 142);
+}
+
+/* superhero list css */
+
+
+/* superherodetails css */
+.card-details {
+    background-color: #333;
+    color: #fff;
+    border: none;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+  }
+
+  .card-title {
+    color: #fff;
+    font-size: 24px;
+    margin-bottom: 10px;
+  }
+
+  .list-group-item {
+    background-color: #444;
+    border-color: #333;
+    color: #fff;
+  }
+
+  .list-group-item:not(:last-child) {
+    border-bottom: none;
+  }
+
+  .list-group-item:first-child {
+    border-top-left-radius: 0;
+    border-top-right-radius: 0;
+  }
+
+  .list-group-item:last-child {
+    border-bottom-left-radius: 0;
+    border-bottom-right-radius: 0;
+  }
+
+  .list-group-item:hover {
+    background-color: #555;
+  }
+
+  /* superherodetails css */
