@@ -9,58 +9,13 @@
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
   <link rel="stylesheet" href="index.css">
-
-  <!-- <link rel="stylesheet" href="index.css"> -->
-  <style>
-    /* Custom styles for dark theme */
-    /* body {
-      background-color: #222;
-      color: #fff;
-      font-family: Arial, sans-serif;
-    } */
-/* 
-    .card-details {
-      background-color: #333;
-      color: #fff;
-      border: none;
-      box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
-    }
-
-    .card-title {
-      color: #fff;
-      font-size: 24px;
-      margin-bottom: 10px;
-    }
-
-    .list-group-item {
-      background-color: #444;
-      border-color: #333;
-      color: #fff;
-    }
-
-    .list-group-item:not(:last-child) {
-      border-bottom: none;
-    }
-
-    .list-group-item:first-child {
-      border-top-left-radius: 0;
-      border-top-right-radius: 0;
-    }
-
-    .list-group-item:last-child {
-      border-bottom-left-radius: 0;
-      border-bottom-right-radius: 0;
-    }
-
-    .list-group-item:hover {
-      background-color: #555;
-    } */
-  </style>
 </head>
 
 <body>
-  <div class="container">
-    <div class="row mt-5" >
+  <div class="loader mx-auto" style="margin-top: 20%;" id="details-loading"></div>
+  <div class="container" id="details-container">
+ 
+    <div class="row mt-5">
       <div class="col-md-4">
         <div class="card-details">
           <img src="" class="card-img-top" alt="Superhero Image" id="superhero-img">
@@ -71,11 +26,9 @@
         </div>
         <div class="mt-2">
           <a href="index.html" style="color: white;">
-            <i class="fas fa-arrow-left back-icon" ></i><span class="mx-2">Go Back</span>
+            <i class="fas fa-arrow-left back-icon"></i><span class="mx-2">Go Back</span>
           </a>
         </div>
-       
-      
       </div>
       <div class="col-md-8">
         <div class="card-details">

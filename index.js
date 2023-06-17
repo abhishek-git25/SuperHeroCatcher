@@ -8,6 +8,7 @@ const privateKey = 'c5d8bfd6708381fed794ff6dbd374495ecefaed3';
 const searchInput = document.getElementById('search_superhero');
 const searchListWeb = document.getElementById('search_list_web');
 const searchListMobile = document.getElementById('search_list_mobile');
+const loader = document.getElementById('loading');
 var dynamicData = [];
 var favourites = JSON.parse(localStorage.getItem('favourite_superhero')) || [];
 
@@ -39,10 +40,15 @@ function toggleSeachContainer(e) {
 
 // superherolist api call
 async function fetchSuperHeros() {
+  loader.style.display = "block";
   try {
     const res = await fetch(superHeroList)
     const data = await res.json()
-    getDataList(data)
+    if (data.code === 200 && data.status ===  'Ok') {
+      loader.style.display = "none";
+      getDataList(data)
+    }
+
   } catch (error) {
     console.log(error);
   }
@@ -65,7 +71,7 @@ function redirectToDetails(id) {
 
 // Renders each superhero to dom
 function addSuperHerosToDom(data) {
-  let html = `<div class="card home-list me-3 mt-3" data-id = "${data.id}" onclick="redirectToDetails(${data.id})">
+  let html = `<div class="card home-list me-3 mt-3" data-id = "${data.id}" >
 <img src=${data.thumbnail.path + "." + data.thumbnail.extension} alt="superhero1" width="100" height="100" class="mx-auto">
 <div class="text-white text-center mt-3">Name : ${data.name}</div>
 <a href="superherodetails.html?id=${data.id}"  onclick="redirectToDetails(${data.id})"  class="text-white text-center mt-1">Go to Details</a><button class="btn btn-dark mt-2">Add to Favourite</button></div>`
@@ -96,7 +102,7 @@ function addToFavourites(data) {
 // function to render favourites in dom
 
 function renderFavouriteSuperHero(favourite) {
-  let favouriteHtml = `<div class="card me-3 mt-2" onclick="redirectToDetails(${favourite.id})">
+  let favouriteHtml = `<div class="card me-3 mt-2" >
   <img src= ${favourite.thumbnail.path + "." + favourite.thumbnail.extension}  alt="superhero1" width="100" height="100" class="mx-auto">
   <div class="text-white text-center mt-3">Name : ${favourite.name}</div>
   <a href="superherodetails.html?id=${favourite.id}" onclick="redirectToDetails(${favourite.id})" class="text-white text-center mt-1">
